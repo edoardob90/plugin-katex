@@ -1,13 +1,4 @@
-{{ if .HasShortcode "math" }} {{ $fonts := resources.Match "katex/*.woff2" }} {{
-range $fonts }}
-<link
-  rel="preload"
-  href="{{ .Permalink }}"
-  as="font"
-  type="font/woff2"
-  crossorigin="anonymous"
-/>
-{{ end }}
+{{ if .HasShortcode "math" }}
 <link rel="stylesheet" href="/katex.min.css" />
 <script defer src="/js/katex.min.js"></script>
 <script defer src="/js/auto-render.min.js"></script>
