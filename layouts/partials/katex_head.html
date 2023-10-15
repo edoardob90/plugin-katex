@@ -1,5 +1,5 @@
-{{ if .HasShortcode "math" }} {{ $fonts := resources.Match "fonts/KaTeX*.woff2"
-}} {{ range $fonts }}
+{{ if .HasShortcode "math" }} {{ $fonts := resources.Match "katex/*.woff2" }} {{
+range $fonts }}
 <link
   rel="preload"
   href="{{ .Permalink }}"
