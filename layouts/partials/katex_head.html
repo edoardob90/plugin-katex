@@ -7,8 +7,8 @@ range $fonts }}
   type="font/woff2"
   crossorigin="anonymous"
 />
-{{ end }}
-<link rel="stylesheet" href="/css/katex.min.css" />
+{{ end }} {{ $katexCSS := resources.Get "css/katex.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $katexCSS }}" />
 <script defer src="/js/katex.min.js"></script>
 <script defer src="/js/auto-render.min.js"></script>
 <script>
