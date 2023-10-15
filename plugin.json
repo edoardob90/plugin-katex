@@ -1,0 +1,8 @@
+{
+  "version": "0.1.0",
+  "title": "KaTeX for Micro.blog",
+  "description": "Enable math typesetting with KaTeX on your Micro.blog hosted site.",
+  "includes": [
+    "katex_head.html"
+  ]
+}

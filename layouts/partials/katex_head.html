@@ -1,0 +1,28 @@
+{{ if or (.HasShortcode "math") (.HasShortcode "dmath") }} {{ $fonts :=
+resources.Match "fonts/KaTeX*.woff2" }} {{ range $fonts }}
+<link
+  rel="preload"
+  href="{{ .Permalink }}"
+  as="font"
+  type="font/woff2"
+  crossorigin="anonymous"
+/>
+{{ end }}
+<link rel="stylesheet" href="/css/katex.min.css" />
+<script defer src="/js/katex.min.js"></script>
+<script defer src="/js/auto-render.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      // auto-render specific keys
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true },
+      ],
+      throwOnError: false,
+    });
+  });
+</script>
+{{ end }}
